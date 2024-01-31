@@ -31,5 +31,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Run Tests
-      run: | python -m unittest discover tests
+      run: | 
+      - name: Run Tests
+        run: python -m unittest discover tests
         # Add commands to run your tests here (e.g., pytest)
