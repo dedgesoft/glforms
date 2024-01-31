@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block title %}Form Builder - Form Builder App{%
+endblock %} {% block content %}
+<h2>Form Builder Interface</h2>
+<div id="form-builder">
+  <!-- Field Selection Area -->
+  <div id="field-selection">
+    <button onclick="addField('text')">Add Text Input</button>
+    <button onclick="addField('checkbox')">Add Checkbox</button>
+    <!-- More field types -->
+  </div>
+<!-- Drag and Drop Fields-->
+
+<div id="form-elements">
+    <div draggable="true" ondragstart="drag(event)" id="textInput">Text Input</div>
+    <div draggable="true" ondragstart="drag(event)" id="checkbox">Checkbox</div>
+    <!-- Add other form elements here -->
+</div>
+
+
+<!-- Droppable area-->
+
+<div id="form-builder" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <!-- Form elements will be dropped here -->
+</div>
+
+  <!-- Form Preview -->
+  <div id="form-preview">
+    <form id="custom-form">
+      <!-- Dynamic fields will be added here -->
+    </form>
+  </div>
+</div>
+
+<button onclick="saveForm()">Save Form</button>
+
+<!-- JavaScript for dynamic field addition and form saving -->
+<script src="{{ url_for('static', filename='js/form_builder.js') }}"></script>
+{% endblock %}
